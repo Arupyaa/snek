@@ -28,6 +28,8 @@
 #include <random>
 #include "SoundEffect.h"
 #include "FrameTimer.h"
+#include "Settings.h"
+
 
 class Game
 {
@@ -49,6 +51,7 @@ private:
 	/*  User Variables              */
 	Board brd;
 	Snake snek;
+	SettingsFile Settings;
 	Location delta_loc = {1,0};
 	std::mt19937 rng;
 	FrameTimer ft;

@@ -22,13 +22,15 @@
 #include "Game.h"
 #include "SpriteCodex.h"
 
-Game::Game( MainWindow& wnd )
+Game::Game(MainWindow& wnd)
 	:
-	wnd( wnd ),
-	gfx( wnd ),
-	brd( gfx ),
-	rng( std::random_device()() ),
-	snek( {2,2} )
+	wnd(wnd),
+	gfx(wnd),
+	Settings(),
+	brd(gfx,Settings.width,Settings.height),
+	rng(std::random_device()()),
+	snek({ 2,2 })
+	
 {
 	for( int i = 0; i < nPoison; i++ )
 	{
@@ -115,7 +117,6 @@ void Game::UpdateModel()
 					sfxSlither.Play( rng,0.08f );
 				}
 			}
-			brd.DeleteCells(gameIsOver);
 		}
 	}
 	else

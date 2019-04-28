@@ -1,0 +1,5 @@
+Board width
+24.
+
+Board height
+18.

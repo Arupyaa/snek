@@ -15,7 +15,8 @@ public:
 		Poison
 	};
 public:
-	Board( Graphics& gfx );
+	Board( Graphics& gfx, int width, int height);
+	~Board();
 	void DrawCell( const Location& loc,Color c );
 	int GetGridWidth() const;
 	int GetGridHeight() const;
@@ -25,7 +26,6 @@ public:
 	void SpawnContents( std::mt19937& rng,const class Snake& snake,CellContents contents );
 	void DrawBorder();
 	void DrawCells();
-	void DeleteCells(bool GIO);
 private:
 	static constexpr Color borderColor = Colors::Blue;
 	static constexpr Color obstacleColor = Colors::Gray;
@@ -39,6 +39,6 @@ private:
 	static constexpr int borderPadding = 2;
 	static constexpr int x = 70;
 	static constexpr int y = 50;
-	CellContents* contents = new CellContents[width*height];
+	CellContents* contents;
 	Graphics& gfx;
 };
