@@ -26,8 +26,7 @@ Game::Game(MainWindow& wnd)
 	:
 	wnd(wnd),
 	gfx(wnd),
-	Settings(),
-	brd(gfx,Settings.width,Settings.height),
+	brd(gfx, Settings.width, Settings.height),
 	rng(std::random_device()()),
 	snek({ 2,2 })
 	
@@ -41,6 +40,8 @@ Game::Game(MainWindow& wnd)
 		brd.SpawnContents( rng,snek,Board::CellContents::Food );
 	}
 	sndTitle.Play( 1.0f,1.0f );
+	
+
 }
 
 void Game::Go()

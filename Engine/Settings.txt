@@ -1,5 +1,9 @@
 Board width
 24.
 
+Tile size
+10.
+
 Board height
 18.
+

@@ -49,9 +49,10 @@ private:
 	Graphics gfx;
 	/********************************/
 	/*  User Variables              */
+	SettingsFile Settings;
 	Board brd;
 	Snake snek;
-	SettingsFile Settings;
+	
 	Location delta_loc = {1,0};
 	std::mt19937 rng;
 	FrameTimer ft;
