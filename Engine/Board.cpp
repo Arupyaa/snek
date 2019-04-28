@@ -5,7 +5,10 @@
 Board::Board( Graphics& gfx )
 	:
 	gfx( gfx )
-{}
+{
+	for(int i = 0; i<(width*height);++i)
+	contents[i] = { CellContents::Empty };
+}
 
 void Board::DrawCell( const Location & loc,Color c )
 {
@@ -100,5 +103,13 @@ void Board::DrawCells()
 				break;
 			}
 		}
+	}
+}
+
+void Board::DeleteCells(bool GIO)
+{
+	if (GIO)
+	{
+		delete[] contents;
 	}
 }

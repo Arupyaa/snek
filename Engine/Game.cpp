@@ -115,6 +115,7 @@ void Game::UpdateModel()
 					sfxSlither.Play( rng,0.08f );
 				}
 			}
+			brd.DeleteCells(gameIsOver);
 		}
 	}
 	else
