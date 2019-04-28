@@ -2,10 +2,11 @@
 #include "Snake.h"
 #include <assert.h>
 
-Board::Board( Graphics& gfx,int width,int height )
+Board::Board( Graphics& gfx,int width,int height, int dimension)
 	:
 	width(width),
 	height(height),
+	dimension(dimension),
 	gfx( gfx ),
 	contents(new CellContents[width*height])
 {

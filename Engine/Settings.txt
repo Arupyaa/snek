@@ -7,3 +7,11 @@ Tile size
 Board height
 18.
 
+Speedup rate
+0.13f
+
+Amount of poison
+30.
+
+Amount of goals
+10.
