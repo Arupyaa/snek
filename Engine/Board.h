@@ -3,6 +3,7 @@
 #include "Graphics.h"
 #include "Location.h"
 #include <random>
+#include <vector>
 
 class Board
 {
@@ -39,6 +40,6 @@ private:
 	static constexpr int borderPadding = 2;
 	static constexpr int x = 70;
 	static constexpr int y = 50;
-	CellContents* contents;
+	std::vector<CellContents> contents;
 	Graphics& gfx;
 };

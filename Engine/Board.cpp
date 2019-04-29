@@ -7,16 +7,21 @@ Board::Board( Graphics& gfx,int width,int height, int dimension)
 	width(width),
 	height(height),
 	dimension(dimension),
-	gfx( gfx ),
-	contents(new CellContents[width*height])
+	gfx( gfx )
 {
-	for(int i = 0; i<(width*height);++i)
-	contents[i] = { CellContents::Empty };
+	for (int i = 0; i < width*height; ++i)
+	{
+		contents.emplace_back(CellContents::Empty);
+	}
+	//contents.resize(width*height, CellContents::Empty);
+	//for(int i = 0; i<(width*height);++i)
+	//contents[i] = { CellContents::Empty };
+
 }
 
 Board::~Board()
 {
-	delete[] contents;
+	
 }
 
 void Board::DrawCell( const Location & loc,Color c )

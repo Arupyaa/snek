@@ -88,7 +88,11 @@ void Game::UpdateModel()
 			{
 				snekMoveCounter -= snekModifiedMovePeriod;
 				const Location next = snek.GetNextHeadLocation( delta_loc );
-				const Board::CellContents contents = brd.GetContents( next );
+				Board::CellContents contents = Board::CellContents::Empty;
+				if (brd.IsInsideBoard(next))
+				{
+					 contents = brd.GetContents(next);
+				}
 				if( !brd.IsInsideBoard( next ) ||
 					snek.IsInTileExceptEnd( next ) ||
 					contents == Board::CellContents::Obstacle )
