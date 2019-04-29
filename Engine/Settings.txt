@@ -2,13 +2,13 @@ Board width
 24.
 
 Tile size
-10.
+20.
 
 Board height
 18.
 
 Speedup rate
-0.13f
+0.93f
 
 Amount of poison
 30.
